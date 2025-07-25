@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Superstore Performance - Executive Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dashboard-bg': '#f0f0f5',
+                        'card-bg': '#ffffff',
+                        'purple-light': '#e8e7f3',
+                        'blue-light': '#dde7f0',
+                        'green-accent': '#4ade80',
+                        'red-accent': '#ef4444'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dashboard-bg min-h-screen p-4">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">EUROPEAN SUPERSTORE PERFORMANCE - EXECUTIVE SUMMARY</h1>
+                <p class="text-sm text-gray-600">Comparison period October 2017 vs. October 2016</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-600">PERIOD</span>
+                <select class="border rounded px-3 py-1 text-sm">
+                    <option>2017</option>
+                </select>
+                <select class="border rounded px-3 py-1 text-sm">
+                    <option>October</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex items-center space-x-6 mb-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <span class="text-xs text-gray-600">Below the Previous Period</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-purple-400 rounded-sm"></div>
+                <span class="text-xs text-gray-600">Current Period</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-gray-600 rounded-sm"></div>
+                <span class="text-xs text-gray-600">Previous Period</span>
+            </div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Left Column - KPI Cards -->
+            <div class="col-span-3 space-y-4">
+                <!-- Sales KPI -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="text-sm font-semibold text-gray-700 mb-2">SALES</div>
+                    <div class="text-3xl font-bold text-gray-800 mb-1">$589.3K</div>
+                    <div class="text-sm text-gray-500 mb-3">$509.3K Prior Year</div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <div class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">15.7% vs. PY</div>
+                    </div>
+                    <!-- Mini Chart -->
+                    <iframe 
+                        src="YOUR_FINEBI_SALES_CHART_URL" 
+                        class="w-full h-16 border-0"
+                        title="Sales Monthly Chart">
+                    </iframe>
+                </div>
+
+                <!-- Profit KPI -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="text-sm font-semibold text-gray-700 mb-2">PROFIT</div>
+                    <div class="text-3xl font-bold text-gray-800 mb-1">$73.5K</div>
+                    <div class="text-sm text-gray-500 mb-3">$71.8K Prior Year</div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <div class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">2.3% vs. PY</div>
+                    </div>
+                    <!-- Mini Chart -->
+                    <iframe 
+                        src="YOUR_FINEBI_PROFIT_CHART_URL" 
+                        class="w-full h-16 border-0"
+                        title="Profit Monthly Chart">
+                    </iframe>
+                </div>
+
+                <!-- Orders KPI -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="text-sm font-semibold text-gray-700 mb-2"># ORDERS</div>
+                    <div class="text-3xl font-bold text-gray-800 mb-1">958</div>
+                    <div class="text-sm text-gray-500 mb-3">811 Prior Year</div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <div class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">18.1% vs. PY</div>
+                    </div>
+                    <!-- Mini Chart -->
+                    <iframe 
+                        src="YOUR_FINEBI_ORDERS_CHART_URL" 
+                        class="w-full h-16 border-0"
+                        title="Orders Monthly Chart">
+                    </iframe>
+                </div>
+
+                <!-- Customers KPI -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="text-sm font-semibold text-gray-700 mb-2"># CUSTOMERS</div>
+                    <div class="text-3xl font-bold text-gray-800 mb-1">593</div>
+                    <div class="text-sm text-gray-500 mb-3">529 Prior Year</div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <div class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">12.1% vs. PY</div>
+                    </div>
+                    <!-- Mini Chart -->
+                    <iframe 
+                        src="YOUR_FINEBI_CUSTOMERS_CHART_URL" 
+                        class="w-full h-16 border-0"
+                        title="Customers Monthly Chart">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Middle Column - Sales Comparisons -->
+            <div class="col-span-6 space-y-4">
+                <!-- Top Navigation Tabs -->
+                <div class="bg-gray-200 rounded-lg p-1 flex">
+                    <button class="flex-1 bg-white rounded px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">SALES</button>
+                    <button class="flex-1 px-4 py-2 text-sm text-gray-600">PROFIT</button>
+                    <button class="flex-1 px-4 py-2 text-sm text-gray-600">ORDERS</button>
+                    <button class="flex-1 px-4 py-2 text-sm text-gray-600">CUSTOMERS</button>
+                </div>
+
+                <!-- Sales Comparison by Segment -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-sm font-semibold text-gray-700">SALES COMPARISON BY SEGMENT</h3>
+                        <span class="text-xs text-gray-500">Hover the cursor over the bars to view top 5 clients</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- Consumer Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Consumer</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_CONSUMER_SEGMENT_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Consumer Segment Chart">
+                            </iframe>
+                        </div>
+                        <!-- Corporate Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Corporate</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_CORPORATE_SEGMENT_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Corporate Segment Chart">
+                            </iframe>
+                        </div>
+                        <!-- Home Office Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Home Office</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_HOME_OFFICE_SEGMENT_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Home Office Segment Chart">
+                            </iframe>
+                        </div>
+                    </div>
+                    <!-- Segment Performance Bars -->
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Corporate</span>
+                            <span class="text-xs text-green-600">+31.0%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Home Office</span>
+                            <span class="text-xs text-green-600">+52.4%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-300 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Consumer</span>
+                            <span class="text-xs text-red-600">-0.6%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Comparison by Category -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-sm font-semibold text-gray-700">SALES COMPARISON BY CATEGORY</h3>
+                        <span class="text-xs text-gray-500">Hover the cursor over the bars to view subcategories</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- Furniture Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Furniture</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_FURNITURE_CATEGORY_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Furniture Category Chart">
+                            </iframe>
+                        </div>
+                        <!-- Technology Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Technology</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_TECHNOLOGY_CATEGORY_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Technology Category Chart">
+                            </iframe>
+                        </div>
+                        <!-- Office Supplies Chart -->
+                        <div>
+                            <h4 class="text-center text-sm font-medium text-gray-600 mb-2">Office Supplies</h4>
+                            <iframe 
+                                src="YOUR_FINEBI_OFFICE_SUPPLIES_CATEGORY_CHART_URL" 
+                                class="w-full h-32 border-0"
+                                title="Office Supplies Category Chart">
+                            </iframe>
+                        </div>
+                    </div>
+                    <!-- Category Performance Bars -->
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Technology</span>
+                            <span class="text-xs text-green-600">+8.6%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Office Supplies</span>
+                            <span class="text-xs text-green-600">+30.2%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-300 h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xs w-16">Furniture</span>
+                            <span class="text-xs text-green-600">+9.2%</span>
+                            <div class="flex-1 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Region and Ship Mode -->
+            <div class="col-span-3 space-y-4">
+                <!-- Sales Comparison by Region -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-sm font-semibold text-gray-700">SALES COMPARISON BY REGION</h3>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-4">Click on the region to filter the top 5 states</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">Central</span>
+                            <span class="text-xs text-green-600">+5.8%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">South</span>
+                            <span class="text-xs text-green-600">+73.3%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-300 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">North</span>
+                            <span class="text-xs text-green-600">+0.0%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Details -->
+                    <div class="mt-6 space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span>Ile-de-France</span>
+                            <span class="text-green-600">+45.3%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Provence-Alpes-...</span>
+                            <span class="text-green-600">+115.1%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Aquitaine-Limou...</span>
+                            <span class="text-green-600">+43.2%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-red-600">● North Rhine-Wes...</span>
+                            <span class="text-red-600">-23.2%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Auvergne-Rhône-...</span>
+                            <span class="text-red-600">-26.7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Comparison by Ship Mode -->
+                <div class="bg-card-bg rounded-lg p-4 shadow-sm border">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-4">SALES COMPARISON BY SHIP MODE</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">Standard Class</span>
+                            <span class="text-xs text-green-600">+6.1%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">Second Class</span>
+                            <span class="text-xs text-green-600">+38.8%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-300 h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs">First Class</span>
+                            <span class="text-xs text-green-600">+31.5%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-red-600">● Same Day</span>
+                            <span class="text-xs">+0.0%</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-gray-400 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 text-right">
+            <span class="text-xs text-gray-500">Design: Vignesh Suresh</span>
+        </div>
+
+        <!-- Tableau Footer -->
+        <div class="mt-4 flex items-center justify-between text-xs text-gray-500">
+            <div class="flex items-center space-x-4">
+                <span>📊 View on Tableau Public</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button>📤</button>
+                <button>📋</button>
+                <button>↶</button>
+                <button>↷</button>
+                <button>🔍</button>
+                <button>📊</button>
+                <button>📤 Share</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
